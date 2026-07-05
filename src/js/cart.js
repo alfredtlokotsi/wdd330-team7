@@ -1,7 +1,7 @@
-import { getLocalStorage, getCart } from "./utils.mjs";  // Changed this line
+import { getLocalStorage, getCart } from "./utils.mjs"; // Changed this line
 
 function renderCartContents() {
-  const cartItems = getCart();  // Changed this line
+  const cartItems = getCart(); // Changed this line
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
