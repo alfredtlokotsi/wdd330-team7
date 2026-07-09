@@ -3,7 +3,22 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   root: "src/",
-
+  server: {
+    fs: {
+      allow: [
+        // Allow the entire project directory
+        resolve(__dirname),
+        // Allow the src directory explicitly
+        resolve(__dirname, "src"),
+        // Allow the images directory specifically
+        resolve(__dirname, "src", "images"),
+        // Allow the tents directory specifically
+        resolve(__dirname, "src", "images", "tents"),
+        // Allow parent directory just in case
+        resolve(__dirname, ".."),
+      ],
+    },
+  },
   build: {
     outDir: "../dist",
     rollupOptions: {
